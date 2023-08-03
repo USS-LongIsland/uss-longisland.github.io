@@ -7,7 +7,7 @@ var UnminedMapProperties = {
     minRegionX: -95,
     minRegionZ: -145,
     maxRegionX: 76,
-    maxRegionZ: 77,
+    maxRegionZ: 81,
     worldName: "GC_9TH_SURVIVAL",
     background: "#606060",
     markers: new Array()
