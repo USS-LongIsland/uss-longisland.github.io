@@ -6,7 +6,7 @@ var UnminedMapProperties = {
     imageFormat: "webp",
     minRegionX: -134,
     minRegionZ: -145,
-    maxRegionX: 149,
+    maxRegionX: 150,
     maxRegionZ: 98,
     worldName: "GC_9TH_SURVIVAL",
     background: "#606060",
