@@ -4,11 +4,11 @@ var UnminedMapProperties = {
     maxZoom: 3,
     defaultZoom: 0,
     imageFormat: "webp",
-    minRegionX: -42,
-    minRegionZ: -81,
-    maxRegionX: 58,
-    maxRegionZ: 96,
-    worldName: "GC_10TH_SURVIVAL",
+    minRegionX: -45972,
+    minRegionZ: -57873,
+    maxRegionX: 56187,
+    maxRegionZ: 54070,
+    worldName: "GC_10TH_SURVIVALBE",
     background: "#606060",
     markers: new Array()
 }
