@@ -45,14 +45,14 @@ UnminedCustomMarkers = {
         {
             x: 165,
             z: 80,
-            image: "custom.pin.png",
+            image: "statue.webp",
             imageAnchor: [0.5, 1],
             imageScale: 0.5,
-            text: "出生点",
-            textColor: "red", 
+            //text: "出生点",
+            //textColor: "red", 
             offsetX: 0,
             offsetY: 20,
-            font: "bold 20px Calibri,sans serif",
+            //font: "bold 20px Calibri,sans serif",
         },
 
         // add your markers here
