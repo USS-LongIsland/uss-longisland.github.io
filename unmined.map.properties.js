@@ -6,7 +6,7 @@ var UnminedMapProperties = {
     imageFormat: "webp",
     minRegionX: -36,
     minRegionZ: -39,
-    maxRegionX: 70,
+    maxRegionX: 98,
     maxRegionZ: 27,
     worldName: "world",
     background: "#606060",
