@@ -78,3 +78,13 @@ div.ol-mouse-position {
     display: inline-block;
     margin-left: -20px;
 }
+
+.marker-tooltip {
+    position: absolute;
+    background-color: white;
+    border: 1px solid black;
+    padding: 5px;
+    border-radius: 5px;
+    z-index: 10001; /* Ensure it's on top */
+    display: none; /* Hidden by default */
+}

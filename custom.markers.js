@@ -48,11 +48,18 @@ UnminedCustomMarkers = {
             image: "statue.webp",
             imageAnchor: [0.5, 1],
             imageScale: 0.5,
-            //text: "出生点",
+            text: "出生点",
             //textColor: "red", 
             offsetX: 0,
             offsetY: 20,
             //font: "bold 20px Calibri,sans serif",
+        },
+        {
+            x: 2292,
+            z: 2874,
+            image: "waypoint.webp",
+            imageAnchor: [0.5, 1],
+            imageScale: 0.5,
         },
 
         // add your markers here
