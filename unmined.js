@@ -304,8 +304,6 @@ class Unmined {
             })
         });
 
-        this.olMap = map; // Initialize this.olMap here!
-
         if (this.#options.markers && this.#options.markers.length > 0) {
             this.markersLayer = this.createMarkersLayer(this.#options.markers);
             map.addLayer(this.markersLayer);
@@ -320,6 +318,7 @@ class Unmined {
             mapElement.style.backgroundColor = this.#options.background;
         }
 
+        this.olMap = map;
 
         this.updateGraticule();
         this.updateScaleBar();
@@ -358,9 +357,7 @@ class Unmined {
             var latitude = item.z;
 
             var feature = new ol.Feature({
-                geometry: new ol.geom.Point(ol.proj.transform([longitude, latitude], this.dataProjection, this.viewProjection)),
-                // Store the item data on the feature for later use
-                item: item
+                geometry: new ol.geom.Point(ol.proj.transform([longitude, latitude], this.dataProjection, this.viewProjection))
             });
 
             var style = new ol.style.Style();
@@ -407,58 +404,6 @@ class Unmined {
         var vectorLayer = new ol.layer.Vector({
             source: vectorSource
         });
-
-        // Add a container for the tooltip
-        const tooltip = document.createElement('div');
-        tooltip.className = 'marker-tooltip';
-        tooltip.style.position = 'absolute';
-        tooltip.style.background = 'white';
-        tooltip.style.border = '1px solid black';
-        tooltip.style.padding = '5px';
-        tooltip.style.borderRadius = '5px';
-        tooltip.style.zIndex = '10001'; // Ensure it's on top
-        tooltip.style.display = 'none'; // Hidden by default
-        this.olMap.getTargetElement().appendChild(tooltip);
-
-        // Add pointermove event listener to the map
-        this.olMap.on('pointermove', (evt) => {
-            handleTooltip(evt);
-        });
-
-        this.olMap.on('touchstart', (evt) => {
-            handleTooltip(evt);
-        });
-
-        const handleTooltip = (evt) => {
-            if (evt.dragging) {
-                tooltip.style.display = 'none';
-                return;
-            }
-
-            const pixel = this.olMap.getEventPixel(evt.originalEvent);
-            let hit = false;
-            this.olMap.forEachFeatureAtPixel(pixel, (feature) => {
-                if (feature && feature.get('item')) {
-                    const item = feature.get('item');
-                    if (item.text) {
-                        const mouseX = evt.originalEvent.clientX;
-                        const mouseY = evt.originalEvent.clientY;
-
-                        tooltip.style.left = (mouseX + 30) + 'px';
-                        tooltip.style.top = (mouseY + 30) + 'px';
-                        tooltip.style.display = 'block';
-                        tooltip.innerHTML = item.text;
-                        hit = true;
-                        return;
-                    }
-                }
-            });
-
-            if (!hit) {
-                tooltip.style.display = 'none';
-            }
-        };
-
         return vectorLayer;
     }
 
