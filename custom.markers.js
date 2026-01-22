@@ -38,11 +38,11 @@ Use the imageScale property if the pin image is too large.
 
 UnminedCustomMarkers = {
 
-    isEnabled: true,
+    isEnabled: false,
 
     markers: [
         // Example 2: Marker with text
-        {
+        /*{
             x: 165,
             z: 80,
             image: "statue.webp",
@@ -60,7 +60,7 @@ UnminedCustomMarkers = {
             image: "waypoint.webp",
             imageAnchor: [0.5, 1],
             imageScale: 0.5,
-        },
+        },*/
 
         // add your markers here
 
